@@ -1,0 +1,19 @@
+<div class="container">
+    <label>Enter City Name: </label><br><br>
+    <input #name type="text" value=""/><br><br>
+    <button (click)="onSubmit(name.value)">Submit</button>
+<div *ngIf="datas.cod == 200">
+  
+    <h1>{{ datas.name }}</h1>
+    <h2>Temperature: {{ datas.main.temp}} &#8451;</h2>
+    <p>Feels like: {{datas.main.feels_like }} &#8451;</p> 
+    <p>Minimum Temperature: {{datas.main.temp_min }} &#8451;</p> 
+    <p>Maximum Temperature: {{datas.main.temp_max }} &#8451;</p> 
+    <p>Pressure: {{datas.main.pressure }} Pa</p> 
+    <p>Humidity: {{datas.main.humidity }} %</p> 
+</div>
+
+<div *ngIf="datas.cod == 404">
+    <h1>City not found</h1>
+</div>
+</div>
